@@ -62,28 +62,21 @@
 
 ### 工作原理
 
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│     项目 A      │     │     项目 B      │     │     项目 C      │
-│                 │     │                 │     │                 │
-│ LESSONS_LEARNED │     │ LESSONS_LEARNED │     │ LESSONS_LEARNED │
-└────────┬────────┘     └────────┬────────┘     └────────┬────────┘
-         │                       │                       │
-         │       通用规则        │                       │
-         └───────────┬───────────┴───────────────────────┘
-                     │
-                     ▼
-         ┌───────────────────────┐
-         │      中央规则库       │
-         │  (vibe-coding-rules)  │
-         └───────────────────────┘
-                     │
-                     │  AI 写代码前读取
-                     ▼
-         ┌───────────────────────┐
-         │        新项目         │
-         │     避免重复踩坑      │
-         └───────────────────────┘
+```mermaid
+flowchart TB
+    subgraph Projects[各个项目]
+        A[项目 A<br/>LESSONS_LEARNED]
+        B[项目 B<br/>LESSONS_LEARNED]
+        C[项目 C<br/>LESSONS_LEARNED]
+    end
+
+    A -->|通用规则| Central
+    B -->|通用规则| Central
+    C -->|通用规则| Central
+
+    Central[中央规则库<br/>vibe-coding-rules]
+
+    Central -->|AI 写代码前读取| New[新项目<br/>避免重复踩坑]
 ```
 
 ### 目录结构
@@ -176,28 +169,21 @@ Review `LESSONS_LEARNED.md` from your projects and sync universal rules to this 
 
 ### How It Works
 
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│   Project A     │     │   Project B     │     │   Project C     │
-│                 │     │                 │     │                 │
-│ LESSONS_LEARNED │     │ LESSONS_LEARNED │     │ LESSONS_LEARNED │
-└────────┬────────┘     └────────┬────────┘     └────────┬────────┘
-         │                       │                       │
-         │    Universal rules    │                       │
-         └───────────┬───────────┴───────────────────────┘
-                     │
-                     ▼
-         ┌───────────────────────┐
-         │  Central Rules Repo   │
-         │  (vibe-coding-rules)  │
-         └───────────────────────┘
-                     │
-                     │  AI reads before coding
-                     ▼
-         ┌───────────────────────┐
-         │     New Project       │
-         │  Avoids past mistakes │
-         └───────────────────────┘
+```mermaid
+flowchart TB
+    subgraph Projects[Your Projects]
+        A[Project A<br/>LESSONS_LEARNED]
+        B[Project B<br/>LESSONS_LEARNED]
+        C[Project C<br/>LESSONS_LEARNED]
+    end
+
+    A -->|Universal rules| Central
+    B -->|Universal rules| Central
+    C -->|Universal rules| Central
+
+    Central[Central Rules Repo<br/>vibe-coding-rules]
+
+    Central -->|AI reads before coding| New[New Project<br/>Avoids past mistakes]
 ```
 
 ### Directory Structure
