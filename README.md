@@ -63,20 +63,27 @@
 ### 工作原理
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#10B981', 'primaryTextColor': '#fff', 'primaryBorderColor': '#10B981', 'lineColor': '#10B981', 'secondaryColor': '#1C1917', 'tertiaryColor': '#292524', 'background': '#1C1917', 'mainBkg': '#1C1917', 'nodeBorder': '#10B981', 'clusterBkg': '#292524', 'clusterBorder': '#10B981', 'titleColor': '#10B981', 'edgeLabelBackground': '#1C1917'}}}%%
 flowchart TB
-    subgraph Projects[各个项目]
-        A[项目 A<br/>LESSONS_LEARNED]
-        B[项目 B<br/>LESSONS_LEARNED]
-        C[项目 C<br/>LESSONS_LEARNED]
+    subgraph Projects[" 📁 各个项目 "]
+        A["项目 A<br/>LESSONS_LEARNED"]
+        B["项目 B<br/>LESSONS_LEARNED"]
+        C["项目 C<br/>LESSONS_LEARNED"]
     end
 
-    A -->|通用规则| Central
-    B -->|通用规则| Central
-    C -->|通用规则| Central
+    A -->|"通用规则"| Central
+    B -->|"通用规则"| Central
+    C -->|"通用规则"| Central
 
-    Central[中央规则库<br/>vibe-coding-rules]
+    Central["🗄️ 中央规则库<br/>vibe-coding-rules"]
 
-    Central -->|AI 写代码前读取| New[新项目<br/>避免重复踩坑]
+    Central -->|"AI 写代码前读取"| New["✨ 新项目<br/>避免重复踩坑"]
+
+    style A fill:#292524,stroke:#10B981,color:#fff
+    style B fill:#292524,stroke:#10B981,color:#fff
+    style C fill:#292524,stroke:#10B981,color:#fff
+    style Central fill:#10B981,stroke:#10B981,color:#fff
+    style New fill:#292524,stroke:#10B981,color:#fff
 ```
 
 ### 目录结构
@@ -170,20 +177,27 @@ Review `LESSONS_LEARNED.md` from your projects and sync universal rules to this 
 ### How It Works
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#10B981', 'primaryTextColor': '#fff', 'primaryBorderColor': '#10B981', 'lineColor': '#10B981', 'secondaryColor': '#1C1917', 'tertiaryColor': '#292524', 'background': '#1C1917', 'mainBkg': '#1C1917', 'nodeBorder': '#10B981', 'clusterBkg': '#292524', 'clusterBorder': '#10B981', 'titleColor': '#10B981', 'edgeLabelBackground': '#1C1917'}}}%%
 flowchart TB
-    subgraph Projects[Your Projects]
-        A[Project A<br/>LESSONS_LEARNED]
-        B[Project B<br/>LESSONS_LEARNED]
-        C[Project C<br/>LESSONS_LEARNED]
+    subgraph Projects[" 📁 Your Projects "]
+        A["Project A<br/>LESSONS_LEARNED"]
+        B["Project B<br/>LESSONS_LEARNED"]
+        C["Project C<br/>LESSONS_LEARNED"]
     end
 
-    A -->|Universal rules| Central
-    B -->|Universal rules| Central
-    C -->|Universal rules| Central
+    A -->|"Universal rules"| Central
+    B -->|"Universal rules"| Central
+    C -->|"Universal rules"| Central
 
-    Central[Central Rules Repo<br/>vibe-coding-rules]
+    Central["🗄️ Central Rules Repo<br/>vibe-coding-rules"]
 
-    Central -->|AI reads before coding| New[New Project<br/>Avoids past mistakes]
+    Central -->|"AI reads before coding"| New["✨ New Project<br/>Avoids past mistakes"]
+
+    style A fill:#292524,stroke:#10B981,color:#fff
+    style B fill:#292524,stroke:#10B981,color:#fff
+    style C fill:#292524,stroke:#10B981,color:#fff
+    style Central fill:#10B981,stroke:#10B981,color:#fff
+    style New fill:#292524,stroke:#10B981,color:#fff
 ```
 
 ### Directory Structure
